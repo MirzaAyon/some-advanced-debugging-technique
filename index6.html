@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My image slider</title>
+</head>
+
+<body>
+    <img id="slider-img" src="images/c-1.jpg" alt="">
+    <!-- first e je pic dewa hoise eta 1 s por por change hye onno ekta pic dekhabe -->
+
+    <script>
+        const images = ["images/c-1.jpg", "images/c-2.jpg", "images/c-1.jpg", "images/c-2.jpg", "images/c-1.jpg", "images/c-2.jpg"];
+        // kichu khon por por ekta jinish cholbe ejonno setinterval 
+        let imageIndex = 0;
+        const imgElement = document.getElementById('slider-img');
+        setInterval(() => {
+            if (imageIndex >= images.length) {
+                imageIndex = 0;
+            }
+            console.log(imageIndex); //check browser //console e ek ek kore bartese
+            const imgURL = images[imageIndex];
+            imgElement.setAttribute('src', imgURL);
+            console.log(imgURL);
+            imageIndex++;
+        }, 1000)
+    </script>
+</body>
+
+</html>
